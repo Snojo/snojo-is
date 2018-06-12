@@ -3,7 +3,10 @@ import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
+import NavBar from '../components/navbar'
 import Header from '../components/header'
+import _Footer from '../components/_footer'
+
 import './index.css'
 import {
   Button,
@@ -23,43 +26,6 @@ import GatsbyLink from 'gatsby-link'
 
 const Layout = ({ children, data }) => (
   <div>
-    {/* This is NavBar  */}
-    <div>
-      <Navbar brand={data.site.siteMetadata.title} left className="black">
-        <div>
-          <SideNav
-            trigger={
-              <NavItem>
-                <Icon>view_module</Icon>
-              </NavItem>
-            }
-            options={{ closeOnClick: true }}
-          >
-            <SideNavItem
-              userView
-              user={{
-                background: 'img/office.jpg',
-                image: 'img/yuna.jpg',
-                name: 'John Doe',
-                email: 'jdandturk@gmail.com',
-              }}
-            />
-            <SideNavItem href="#!icon" icon="cloud">
-              First Link With Icon
-            </SideNavItem>
-            <SideNavItem href="#!second">Second Link</SideNavItem>
-            <SideNavItem divider />
-            <SideNavItem subheader>Subheader</SideNavItem>
-            <SideNavItem waves href="#!third">
-              Third Link With Waves
-            </SideNavItem>
-          </SideNav>
-        </div>
-        <NavItem href="/">Home</NavItem>
-        <NavItem href="/page-2/">Page 2</NavItem>
-        {/* This is Sidenav */}
-      </Navbar>
-    </div>
     {/* React Helmet */}
     <Helmet
       title={data.site.siteMetadata.title}
@@ -67,8 +33,18 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
-    />
+    >
+      <link
+        href="http://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      />
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"
+        rel="stylesheet"
+      />
+    </Helmet>
 
+    <NavBar />
     <div
       style={{
         margin: '0 auto',
@@ -77,65 +53,11 @@ const Layout = ({ children, data }) => (
         paddingTop: '2em',
       }}
     >
-      <div>
-        <div>
-          <div className="section white">
-            <div className="row container">
-              {/* Content  */}
-              {children()}
-              <MediaBox
-                src="http://materializecss.com/images/parallax1.jpg"
-                caption="A demo media box1"
-                width="350"
-              />
-              {/* SliderThis is our big Tagline!Here's our sm{' '} */}
-            </div>
-          </div>
-        </div>
-      </div>
+      <div>{children()}</div>
     </div>
     <Parallax imageSrc="http://materializecss.com/images/parallax1.jpg" />
-    {/* Footer  */}
-    <div>
-      <Footer
-        copyrights="&copy 2015 Copyright Text"
-        moreLinks={
-          <a className="grey-text text-lighten-4 right" href="#!">
-            More Links
-          </a>
-        }
-        links={
-          <ul>
-            <li>
-              <a className="grey-text text-lighten-3" href="#!">
-                Link 1
-              </a>
-            </li>
-            <li>
-              <a className="grey-text text-lighten-3" href="#!">
-                Link 2
-              </a>
-            </li>
-            <li>
-              <a className="grey-text text-lighten-3" href="#!">
-                Link 3
-              </a>
-            </li>
-            <li>
-              <a className="grey-text text-lighten-3" href="#!">
-                Link 4
-              </a>
-            </li>
-          </ul>
-        }
-        className="black"
-      >
-        <h5 className="white-text">Footer Content</h5>
-        <p className="grey-text text-lighten-4">
-          You can use rows and columns here to organize your footer content.
-        </p>
-      </Footer>;
-    </div>
+
+    <_Footer />
   </div>
 )
 

@@ -1,0 +1,7 @@
+{
+  "prettier.semi": false,
+  "prettier.useTabs": true,
+  "prettier.bracketSpacing": true,
+  "prettier.jsxBracketSameLine": false,
+  "editor.formatOnSave": true
+}
