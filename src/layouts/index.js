@@ -23,7 +23,7 @@ import {
   MediaBox,
 } from 'react-materialize'
 import GatsbyLink from 'gatsby-link'
-
+const parall = require('../img/parallax1.jpg')
 const Layout = ({ children, data }) => (
   <div>
     {/* React Helmet */}
@@ -55,7 +55,7 @@ const Layout = ({ children, data }) => (
     >
       <div>{children()}</div>
     </div>
-    <Parallax imageSrc="https://materializecss.com/images/parallax1.jpg" />
+    <Parallax imageSrc={parall} />
 
     <_Footer />
   </div>
