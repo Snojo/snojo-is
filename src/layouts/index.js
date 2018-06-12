@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import NavBar from '../components/navbar'
 import Header from '../components/header'
 import _Footer from '../components/_footer'
+import { Parallax, Background } from 'react-parallax'
 
 import './index.css'
 import {
@@ -19,7 +20,6 @@ import {
   Footer,
   SideNav,
   SideNavItem,
-  Parallax,
   MediaBox,
 } from 'react-materialize'
 import GatsbyLink from 'gatsby-link'
@@ -45,17 +45,23 @@ const Layout = ({ children, data }) => (
     </Helmet>
 
     <NavBar />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: '2em',
-      }}
-    >
-      <div>{children()}</div>
-    </div>
-    <Parallax imageSrc={parall} />
+
+    <Parallax blur={0} bgImage={parall} bgImageAlt="the cat" strength={500}>
+      <div
+        style={{
+          margin: '0 auto',
+          maxWidth: 960,
+          // padding: '0px 1.0875rem 1.45rem',
+          paddingTop: '2em',
+          height: '1000px',
+        }}
+      >
+        <div>{children()}</div>
+      </div>
+      <div style={{ height: '200px' }} />
+    </Parallax>
+
+    {/* <Parallax imageSrc={parall} /> */}
 
     <_Footer />
   </div>

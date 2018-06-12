@@ -19,7 +19,7 @@ import {
 
 const NavBar = () => (
   <Navbar brand="SnoJo.is" left className="black">
-    <Sidenav />
+    {/* <Sidenav /> */}
 
     <Button
       waves="light"

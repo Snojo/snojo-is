@@ -17,6 +17,7 @@ import {
 
 const Sidenav = () => (
   <SideNav
+    // fixed={true}
     trigger={
       <NavItem>
         <Icon>view_module</Icon>
