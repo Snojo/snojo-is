@@ -35,7 +35,7 @@ const Layout = ({ children, data }) => (
       ]}
     >
       <link
-        href="http://fonts.googleapis.com/icon?family=Material+Icons"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
       />
       <link
@@ -55,7 +55,7 @@ const Layout = ({ children, data }) => (
     >
       <div>{children()}</div>
     </div>
-    <Parallax imageSrc="http://materializecss.com/images/parallax1.jpg" />
+    <Parallax imageSrc="https://materializecss.com/images/parallax1.jpg" />
 
     <_Footer />
   </div>
